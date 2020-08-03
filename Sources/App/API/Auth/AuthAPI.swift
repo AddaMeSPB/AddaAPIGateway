@@ -42,7 +42,9 @@ extension AuthAPI {
         uri.path += "/auth/login"
         return application.client.post(uri, headers: [
             "Content-Type":"application/json"
-        ])
+        ], beforeSend: { outGoingReq in
+            outGoingReq.body = req.body.data
+        })
     }
 
     func verifySMS(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
@@ -56,7 +58,9 @@ extension AuthAPI {
         uri.path += "/auth/verify_sms"
         return application.client.post(uri, headers: [
             "Content-Type":"application/json"
-        ])
+        ], beforeSend: { outGoingReq in
+            outGoingReq.body = req.body.data
+        })
     }
 
     func refreshToken(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
@@ -70,7 +74,9 @@ extension AuthAPI {
 
         return application.client.post(uri, headers: [
             "Content-Type":"application/json"
-        ])
+        ], beforeSend: { outGoingReq in
+            outGoingReq.body = req.body.data
+        })
 
     }
 
