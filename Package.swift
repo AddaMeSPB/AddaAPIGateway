@@ -8,13 +8,17 @@ let package = Package(
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0")
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.27.1"),
+        .package(url: "https://github.com/vapor/jwt.git", from: "4.0.0-rc.2.1"),
+        .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "6.5.0"),
     ],
     targets: [
         .target(
             name: "App",
             dependencies: [
-                .product(name: "Vapor", package: "vapor")
+                .product(name: "Vapor", package: "vapor"),
+                .product(name: "JWT", package: "jwt"),
+                .product(name: "MongoKitten", package: "MongoKitten")
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of
