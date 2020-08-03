@@ -18,7 +18,8 @@ For Rest of
 2. MONGO_DB_DEV=""
 
 ## Routes you can always check routes
-`swift run Run routes`            
+`swift run Run routes`
+```
 +--------+-----------------------+
 | GET    | /                     |
 +--------+-----------------------+
@@ -40,4 +41,5 @@ For Rest of
 +--------+-----------------------+
 | DELETE | /v1/events/:events_id |
 +--------+-----------------------+
+```
 
