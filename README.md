@@ -7,8 +7,8 @@ Please download this two Vapor 4 App
 Before Run Apps you much need to setup this .env xcode edit schema Environment variables 
 For API need
 1. JWKS={}
-2. AUTH_URL=""
-3. EVENTS_URL=""
+2. AUTH_URL="http://10.0.1.3:1010/v1"
+3. EVENTS_URL="http://10.0.1.3:9090/v1"
 
 AddaMeAuth
 0. TWILIO_ACCOUNT_ID AND TWILIO_ACCOUNT_SECRET for AddaMeAuth app only
