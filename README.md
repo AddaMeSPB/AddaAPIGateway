@@ -1,4 +1,5 @@
 # AddaAPIGateway
+### Note: Check this article why you need this here: https://rynaardb.com/posts/2019/02/23/microservices-with-vapor.html
 For Test this Vapor 4 Api Gateway
 Please download this two Vapor 4 App
 1. https://github.com/AddaMeSPB/AddaMeAuth (Database i used: MongoDB) < This for Auth i am using login via mobile number
