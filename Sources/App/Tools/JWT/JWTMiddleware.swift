@@ -9,6 +9,7 @@ import Vapor
 import JWT
 
 public final class JWTMiddleware: Middleware {
+    
     public init() {}
 
     public func respond(to request: Request, chainingTo next: Responder) -> EventLoopFuture<Response> {

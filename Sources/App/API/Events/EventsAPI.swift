@@ -102,14 +102,14 @@ extension EventsAPI {
         }
 
         guard let token = req.headers[.authorization].first else {
-            throw Abort(.badRequest, reason: "No token")
+            throw Abort(.badRequest, reason: "Missing Authorization token")
         }
 
         var uri = configuration.baseURL
-        guard let id = req.parameters.get("events_id") else {
-            throw Abort(.badRequest, reason: "param id is missing")
-        }
-        uri.path += "/events/\(id)"
+//        guard let id = req.parameters.get("events_id") else {
+//            throw Abort(.badRequest, reason: "param id is missing")
+//        }
+        uri.path += "/events"
 
         return application.client.put(uri, headers: [
             "Content-Type":"application/json",

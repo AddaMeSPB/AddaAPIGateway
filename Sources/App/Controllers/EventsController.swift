@@ -12,7 +12,7 @@ extension EventsController: RouteCollection {
         routes.post(use: create)
         routes.get(use: list)
         routes.get(":events_id", use: read)
-        routes.put(":events_id", use: update)
+        routes.put(use: update)
         routes.delete(":events_id", use: delete)
     }
 }

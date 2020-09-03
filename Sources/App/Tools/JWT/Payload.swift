@@ -28,7 +28,7 @@ struct Payload: JWTPayload {
         self.phoneNumber = phoneNumber
         self.firstname = nil
         self.lastname = nil
-        self.exp = Int( Date(timeIntervalSinceNow: 60*60*24*7).timeIntervalSince1970 ) // week
+        self.exp = Int( Date(timeIntervalSinceNow: 60*60*24*40).timeIntervalSince1970 ) // week
         self.iat = Int( Date().timeIntervalSince1970 )
     }
 
