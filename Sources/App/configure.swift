@@ -11,6 +11,7 @@ public func configure(_ app: Application) throws {
 
     app.auth.configuration = .environment
     app.events.configuration = .environment
+    app.geolocations.configuration = .environment
 
     // Encoder & Decoder
     let encoder = JSONEncoder()
