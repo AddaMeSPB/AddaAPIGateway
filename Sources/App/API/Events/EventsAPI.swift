@@ -45,13 +45,13 @@ extension EventsAPI {
         }
 
         var uri = configuration.baseURL
-        uri.path += "/events"
+        uri.path = "\(req.url)"
         return application.client.get(uri, headers: [
             "Content-Type":"application/json",
             "authorization": token
         ])
     }
-
+    
     func read(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
 
         guard let configuration = self.configuration else {
