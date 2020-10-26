@@ -11,9 +11,9 @@ extension GeoLocationController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
         routes.post(use: create)
         routes.get(use: list)
-        routes.get(":geo_locations_id", use: read)
+        routes.get(":geolocationsId", use: read)
         routes.put(use: update)
-        routes.delete(":geo_locations_id", use: delete)
+        routes.delete(":geolocationsId", use: delete)
     }
 }
 
