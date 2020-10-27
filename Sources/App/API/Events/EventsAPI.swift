@@ -72,6 +72,24 @@ extension EventsAPI {
             "authorization": token
         ])
     }
+    
+    func readMy(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
+
+        guard let configuration = self.configuration else {
+            fatalError("EventsAPI not configured. Use app.events.configuration = ...")
+        }
+
+        guard let token = req.headers[.authorization].first else {
+            throw Abort(.badRequest, reason: "No token")
+        }
+
+        var uri = configuration.baseURL
+        uri.path += "/events/my"
+        return application.client.get(uri, headers: [
+            "Content-Type":"application/json",
+            "authorization": token
+        ])
+    }
 
     func create(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
 
