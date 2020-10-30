@@ -7,5 +7,4 @@ DerivedData/
 db.sqlite
 .swiftpm
 
-.env
 docker-compose.production.yml
