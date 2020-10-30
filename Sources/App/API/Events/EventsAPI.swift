@@ -40,6 +40,7 @@ extension EventsAPI {
         guard let configuration = self.configuration else {
             fatalError("EventsAPI not configured. Use app.events.configuration = ...")
         }
+        
         guard let token = req.headers[.authorization].first else {
             throw Abort(.badRequest, reason: "No token")
         }

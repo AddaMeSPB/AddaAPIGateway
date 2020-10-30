@@ -44,3 +44,10 @@ For Rest of
 +--------+-----------------------+
 ```
 
+## 🏆 Credits
+
+This package is developed and maintained by Saroar [Saroar](https://github.com/saroar.
+
+## 📄 License
+
+This package is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
