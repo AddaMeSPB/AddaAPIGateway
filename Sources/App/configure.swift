@@ -25,7 +25,8 @@ public func configure(_ app: Application) throws {
 
     switch app.environment {
     case .production:
-        app.http.server.configuration.hostname = "https://justcal.me"
+        app.http.server.configuration.hostname = "0.0.0.0"
+        app.http.server.configuration.port = 8080
     case .development:
         app.http.server.configuration.port = 8080
         app.http.server.configuration.hostname = "0.0.0.0"
@@ -33,26 +34,25 @@ public func configure(_ app: Application) throws {
         app.http.server.configuration.port = 8080
         app.http.server.configuration.hostname = "0.0.0.0"
     }
-
     
-    if app.environment == .production {
-        let homePath = app.directory.workingDirectory
-        let certPath = homePath + "cert/cert.pem"
-        let chainPath = homePath + "cert/chain.pem"
-        let keyPath = homePath + "cert/key.pem"
-        // 2
-        app.http.server.configuration.supportVersions = [.two]
-        // 3
-        try app.http.server.configuration.tlsConfiguration = .forServer(
-            certificateChain: [
-                .certificate(.init(file: certPath,
-                                   format: .pem)),
-                .certificate(.init(file: chainPath,
-                                   format: .pem))
-            ],
-            privateKey: .file(keyPath)
-        )
-    }
+//    if app.environment == .production {
+//        let homePath = app.directory.workingDirectory
+//        let certPath = homePath + "cert/cert.pem"
+//        let chainPath = homePath + "cert/chain.pem"
+//        let keyPath = homePath + "cert/key.pem"
+//        // 2
+//        app.http.server.configuration.supportVersions = [.two]
+//        // 3
+//        try app.http.server.configuration.tlsConfiguration = .forServer(
+//            certificateChain: [
+//                .certificate(.init(file: certPath,
+//                                   format: .pem)),
+//                .certificate(.init(file: chainPath,
+//                                   format: .pem))
+//            ],
+//            privateKey: .file(keyPath)
+//        )
+//    }
     // register routes
     try routes(app)
 }
