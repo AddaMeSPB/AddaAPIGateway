@@ -20,7 +20,7 @@ final class MessageController {
         
         if req.loggedIn == false { throw Abort(.unauthorized) }
         
-        return try req.chats.readAllMessagesByConversationID(req)
+        return try req.chats.readAllMessagesByConversationID(req).hop(to: req.eventLoop)
         
     }
     
@@ -29,13 +29,13 @@ final class MessageController {
             throw Abort(.unauthorized)
         }
 
-        return try req.chats.updateMessage(req)
+        return try req.chats.updateMessage(req).hop(to: req.eventLoop)
     }
 
     private func delete(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
         if req.loggedIn == false { throw Abort(.unauthorized) }
 
-        return try req.chats.deleteMessage(req)
+        return try req.chats.deleteMessage(req).hop(to: req.eventLoop)
         
     }
 }

@@ -133,9 +133,9 @@ extension ChatsAPI {
             throw Abort(.badRequest, reason: "param conversationsId/usersId is missing")
         }
 
-        uri.path += "/v1/conversations/\(conversationsId)/users/\(usersId)"
+        uri.path += "/conversations/\(conversationsId)/users/\(usersId)"
 
-        return application.client.put(uri, headers: [
+        return application.client.post(uri, headers: [
             "Content-Type":"application/json",
             "authorization": token
         ], beforeSend: { outGoingReq in
@@ -192,7 +192,7 @@ extension ChatsAPI {
         guard let conversationsId = req.parameters.get("conversationsId") else {
             throw Abort(.badRequest, reason: "param id is missing")
         }
-        uri.path += "/v1/conversations/\(conversationsId)"
+        uri.path += "/conversations/\(conversationsId)"
 
         return application.client.delete(uri, headers: [
             "Content-Type":"application/json",
@@ -213,7 +213,7 @@ extension ChatsAPI {
         guard let messagesId = req.parameters.get("messagesId") else {
             throw Abort(.badRequest, reason: "param id is missing")
         }
-        uri.path += "/v1/messages/\(messagesId)"
+        uri.path += "/messages/\(messagesId)"
 
         return application.client.delete(uri, headers: [
             "Content-Type":"application/json",

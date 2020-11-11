@@ -7,7 +7,7 @@
 
 import Vapor
 
-public struct GeoLocationsAPIConfiguration {
+public struct EventPlaceAPIConfiguration {
     public let baseURL: URI
 
     /// Initializer
@@ -18,20 +18,20 @@ public struct GeoLocationsAPIConfiguration {
         self.baseURL = URI(string: baseURL)
     }
 
-    public static var environment: GeoLocationsAPIConfiguration {
+    public static var environment: EventPlaceAPIConfiguration {
         guard
             let baseURL = Environment.get("EVENTS_URL")
             else {
-            fatalError("Events GEO LOCATIONs environmant variables not set")
+            fatalError("Event EventPlace environmant variables not set")
         }
         return .init(baseURL: baseURL)
     }
 }
 
 extension Application {
-    public var geolocations: GeoLocationsAPI { .init(self) }
+    public var eventplaces: EventPlaceAPI { .init(self) }
 }
 
 extension Request {
-    public var geolocations: GeoLocationsAPI { .init(application) }
+    public var eventplaces: EventPlaceAPI { .init(application) }
 }

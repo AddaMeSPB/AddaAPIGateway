@@ -18,12 +18,12 @@ final class UsersController {
 
     private func find(_ req: Request) throws -> EventLoopFuture<ClientResponse>  {
         if req.loggedIn == false { throw Abort(.unauthorized) }
-        return try req.users.find(req)
+        return try req.users.find(req).hop(to: req.eventLoop)
     }
 
     private func update(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
         if req.loggedIn == false { throw Abort(.unauthorized) }
-        return try req.users.find(req)
+        return try req.users.find(req).hop(to: req.eventLoop)
     }
 
 }

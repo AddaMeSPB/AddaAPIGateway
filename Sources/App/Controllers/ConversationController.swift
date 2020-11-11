@@ -23,20 +23,19 @@ final class ConversationController {
         
         if req.loggedIn == false { throw Abort(.unauthorized) }
         
-        return try req.chats.readAllConversations(req)
+        return try req.chats.readAllConversations(req).hop(to: req.eventLoop)
     }
     
     private func readAllMessageByCoversationID(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
         
         if req.loggedIn == false { throw Abort(.unauthorized) }
         
-        return try req.chats.readAllMessageByCoversationID(req)
+        return try req.chats.readAllMessageByCoversationID(req).hop(to: req.eventLoop)
         
     }
 
     func addUserToConversation(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
-        
-        return try req.chats.addUserToConversation(req)
+      return try req.chats.addUserToConversation(req).hop(to: req.eventLoop)
     }
 
     private func update(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
@@ -44,13 +43,13 @@ final class ConversationController {
             throw Abort(.unauthorized)
         }
 
-        return try req.chats.updateConversations(req)
+        return try req.chats.updateConversations(req).hop(to: req.eventLoop)
     }
 
     private func delete(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
         if req.loggedIn == false { throw Abort(.unauthorized) }
 
-        return try req.chats.deleteConversation(req)
+        return try req.chats.deleteConversation(req).hop(to: req.eventLoop)
         
     }
 

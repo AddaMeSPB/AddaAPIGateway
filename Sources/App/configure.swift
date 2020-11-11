@@ -11,7 +11,7 @@ public func configure(_ app: Application) throws {
 
     app.auth.configuration = .environment
     app.events.configuration = .environment
-    app.geolocations.configuration = .environment
+    app.eventplaces.configuration = .environment
     app.chats.configuration = .environment
     app.users.configuration = .environment
 

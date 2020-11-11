@@ -1,5 +1,5 @@
 //
-//  GeoLocationsAPI.swift
+//  EventPlaceAPI.swift
 //  
 //
 //  Created by Saroar Khandoker on 20.09.2020.
@@ -7,7 +7,7 @@
 
 import Vapor
 
-public struct GeoLocationsAPI {
+public struct EventPlaceAPI {
     let application: Application
     
     init(_ app: Application) {
@@ -17,12 +17,12 @@ public struct GeoLocationsAPI {
 
 // MARK: - Configuration
 
-extension GeoLocationsAPI {
+extension EventPlaceAPI {
     struct ConfigurationKey: StorageKey {
-        typealias Value = GeoLocationsAPIConfiguration
+        typealias Value = EventPlaceAPIConfiguration
     }
 
-    public var configuration: GeoLocationsAPIConfiguration? {
+    public var configuration: EventPlaceAPIConfiguration? {
         get {
             application.storage[ConfigurationKey.self]
         }
@@ -32,7 +32,7 @@ extension GeoLocationsAPI {
     }
 }
 
-extension GeoLocationsAPI {
+extension EventPlaceAPI {
     /// Returns a list of events
     func list(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
         guard let configuration = self.configuration else {
@@ -43,7 +43,7 @@ extension GeoLocationsAPI {
         }
 
         var uri = configuration.baseURL
-        uri.path += "/geolocations"
+        uri.path += "/eventplaces"
         return application.client.get(uri, headers: [
             "Content-Type":"application/json",
             "authorization": token
@@ -53,7 +53,7 @@ extension GeoLocationsAPI {
     func read(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
 
         guard let configuration = self.configuration else {
-            fatalError("GeoLocationsAPI not configured. Use app.events.configuration = ...")
+            fatalError("EventPlaceAPI not configured. Use app.events.configuration = ...")
         }
 
         guard let token = req.headers[.authorization].first else {
@@ -61,10 +61,10 @@ extension GeoLocationsAPI {
         }
 
         var uri = configuration.baseURL
-        guard let id = req.parameters.get("geolocationsId") else {
+        guard let id = req.parameters.get("eventplacesId") else {
             throw Abort(.badRequest, reason: "param id is missing")
         }
-        uri.path += "/geolocations/\(id)"
+        uri.path += "/eventplaces/\(id)"
         return application.client.get(uri, headers: [
             "Content-Type":"application/json",
             "authorization": token
@@ -74,7 +74,7 @@ extension GeoLocationsAPI {
     func create(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
 
         guard let configuration = self.configuration else {
-            fatalError("GeoLocationsAPI not configured. Use app.events.configuration = ...")
+            fatalError("EventPlace not configured. Use app.events.configuration = ...")
         }
 
         guard let token = req.headers[.authorization].first else {
@@ -82,7 +82,7 @@ extension GeoLocationsAPI {
         }
 
         var uri = configuration.baseURL
-        uri.path += "/geolocations"
+        uri.path += "/eventplaces"
 
         return application.client.post(uri, headers: [
             "Content-Type":"application/json",
@@ -96,7 +96,7 @@ extension GeoLocationsAPI {
     func update(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
 
         guard let configuration = self.configuration else {
-            fatalError("GeoLocationsAPI not configured. Use app.events.configuration = ...")
+            fatalError("EventPlaceAPI not configured. Use app.events.configuration = ...")
         }
 
         guard let token = req.headers[.authorization].first else {
@@ -107,7 +107,7 @@ extension GeoLocationsAPI {
 //        guard let id = req.parameters.get("events_id") else {
 //            throw Abort(.badRequest, reason: "param id is missing")
 //        }
-        uri.path += "/geolocations"
+        uri.path += "/eventplaces"
 
         return application.client.put(uri, headers: [
             "Content-Type":"application/json",
@@ -119,7 +119,7 @@ extension GeoLocationsAPI {
 
     func delete(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
         guard let configuration = self.configuration else {
-            fatalError("GeoLocationsAPI not configured. Use app.events.configuration = ...")
+            fatalError("EventPlaceAPI not configured. Use app.events.configuration = ...")
         }
 
         guard let token = req.headers[.authorization].first else {
@@ -130,7 +130,7 @@ extension GeoLocationsAPI {
         guard let id = req.parameters.get("events_id") else {
             throw Abort(.badRequest, reason: "param id is missing")
         }
-        uri.path += "/geolocations/\(id)"
+        uri.path += "/eventplaces/\(id)"
 
         return application.client.delete(uri, headers: [
             "Content-Type":"application/json",
