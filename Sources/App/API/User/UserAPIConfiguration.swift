@@ -8,31 +8,31 @@
 import Vapor
 
 public struct UserAPIConfiguration {
-    public let baseURL: URI
-
-    /// Initializer
-    ///
-    /// - Parameters:
-    ///   - baseURL: ...
-    public init(baseURL: String) {
-        self.baseURL = URI(string: baseURL)
+  public let baseURL: URI
+  
+  /// Initializer
+  ///
+  /// - Parameters:
+  ///   - baseURL: ...
+  public init(baseURL: String) {
+    self.baseURL = URI(string: baseURL)
+  }
+  
+  public static var environment: UserAPIConfiguration {
+    guard
+      let baseURL = Environment.get("AUTH_URL")
+    else {
+      fatalError("Auth environmant variables not set")
     }
-
-    public static var environment: UserAPIConfiguration {
-        guard
-            let baseURL = Environment.get("AUTH_URL")
-            else {
-            fatalError("Auth environmant variables not set")
-        }
-        return .init(baseURL: baseURL)
-    }
+    return .init(baseURL: baseURL)
+  }
 }
 
 extension Application {
-    public var users: UserAPI { .init(self) }
+  public var users: UserAPI { .init(self) }
 }
 
 extension Request {
-    public var users: UserAPI { .init(application) }
+  public var users: UserAPI { .init(application) }
 }
 

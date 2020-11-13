@@ -79,6 +79,8 @@ extension AuthAPI {
         })
 
     }
+  
+  
 
 //    func update(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
 //
