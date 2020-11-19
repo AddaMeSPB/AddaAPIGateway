@@ -15,6 +15,7 @@ public func configure(_ app: Application) throws {
   app.chats.configuration = .environment
   app.users.configuration = .environment
   app.contacts.configuration = .environment
+  app.attachments.configuration = .environment
   
   // Encoder & Decoder
   let encoder = JSONEncoder()

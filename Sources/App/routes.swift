@@ -47,5 +47,10 @@ func routes(_ app: Application) throws {
     let chatAuth = chat.grouped(JWTMiddleware())
     try chatAuth.register(collection: ChatController())
     
+    // ATTACHMENTS
+    let attachment = api.grouped("attachments")
+    let attachmentsAuth = attachment.grouped(JWTMiddleware())
+    try attachmentsAuth.register(collection: AttachmentController())
+    
   }
 }
