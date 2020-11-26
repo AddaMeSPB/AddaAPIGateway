@@ -27,11 +27,6 @@ func routes(_ app: Application) throws {
     let eventsAuth = events.grouped(JWTMiddleware())
     try eventsAuth.register(collection: EventsController() )
     
-    // EventPlace
-    let eventplaces = api.grouped("eventplaces")
-    let eventplacesAuth = eventplaces.grouped(JWTMiddleware())
-    try eventplacesAuth.register(collection: EventPlaceController() )
-    
     // MESSAGES
     let messages = api.grouped("messages")
     let messagesAuth = messages.grouped(JWTMiddleware())

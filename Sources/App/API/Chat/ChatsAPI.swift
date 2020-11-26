@@ -115,6 +115,29 @@ extension ChatsAPI {
     ])
   }
   
+  func read(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
+    
+    guard let configuration = self.configuration else {
+      fatalError("ChatsAPI not configured. Use app.chats.configuration = ...")
+    }
+    
+    guard let token = req.headers[.authorization].first else {
+      throw Abort(.badRequest, reason: "No token")
+    }
+    
+    var uri = configuration.baseURL
+    guard let conversationsId = req.parameters.get("conversationsId") else {
+      throw Abort(.badRequest, reason: "param id is missing")
+    }
+    
+    uri.path += "/conversations/\(conversationsId)"
+
+    return application.client.get(uri, headers: [
+      "Content-Type":"application/json",
+      "authorization": token
+    ])
+  }
+  
   func readAllMessageByCoversationID(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
     
     guard let configuration = self.configuration else {

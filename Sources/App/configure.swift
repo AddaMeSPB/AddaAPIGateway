@@ -11,7 +11,6 @@ public func configure(_ app: Application) throws {
   
   app.auth.configuration = .environment
   app.events.configuration = .environment
-  app.eventplaces.configuration = .environment
   app.chats.configuration = .environment
   app.users.configuration = .environment
   app.contacts.configuration = .environment
@@ -36,6 +35,8 @@ public func configure(_ app: Application) throws {
     app.http.server.configuration.port = 8080
     app.http.server.configuration.hostname = "0.0.0.0"
   }
+  
+  // app.http.server.configuration.supportVersions = [.two]
   
   //    if app.environment == .production {
   //        let homePath = app.directory.workingDirectory
