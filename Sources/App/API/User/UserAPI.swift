@@ -78,4 +78,23 @@ extension UserAPI {
     ])
   }
   
+  
+    func deviceCreateOrUpdate(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
+      guard let configuration = self.configuration else {
+        fatalError("UsersAPI not configured. Use app.chats.configuration = ...")
+      }
+      guard let token = req.headers[.authorization].first else {
+        throw Abort(.badRequest, reason: "No token")
+      }
+      
+      var uri = configuration.baseURL
+      uri.path += "/devices"
+      
+      return application.client.post(uri, headers: [
+        "Content-Type":"application/json",
+        "authorization": token
+      ], beforeSend: { outGoingReq in
+        outGoingReq.body = req.body.data
+      })
+    }
 }

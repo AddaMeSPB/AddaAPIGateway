@@ -32,6 +32,11 @@ func routes(_ app: Application) throws {
     let messagesAuth = messages.grouped(JWTMiddleware())
     try messagesAuth.register(collection: MessageController() )
     
+    // DEVICE
+    let device = api.grouped("devices")
+    let devicesAuth = device.grouped(JWTMiddleware())
+    try devicesAuth.register(collection: DeviceController() )
+    
     // CONVERSATIONS
     let conversations = api.grouped("conversations")
     let conversationsAuth = conversations.grouped(JWTMiddleware())

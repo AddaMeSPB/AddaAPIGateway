@@ -35,7 +35,7 @@ extension AuthAPI {
 extension AuthAPI {
     func login(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
         guard let configuration = self.configuration else {
-            fatalError("EventsAPI not configured. Use app.events.configuration = ...")
+            fatalError("AuthAPI not configured. Use app.events.configuration = ...")
         }
 
         var uri = configuration.baseURL
@@ -50,7 +50,7 @@ extension AuthAPI {
     func verifySMS(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
 
         guard let configuration = self.configuration else {
-            fatalError("EventsAPI not configured. Use app.events.configuration = ...")
+            fatalError("AuthAPI not configured. Use app.events.configuration = ...")
         }
 
         var uri = configuration.baseURL
@@ -66,21 +66,19 @@ extension AuthAPI {
     func refreshToken(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
 
         guard let configuration = self.configuration else {
-            fatalError("EventsAPI not configured. Use app.events.configuration = ...")
+            fatalError("AuthAPI not configured. Use app.events.configuration = ...")
         }
 
         var uri = configuration.baseURL
         uri.path += "/auth/refreshToken"
 
         return application.client.post(uri, headers: [
-            "Content-Type":"application/json"
+            "Content-Type": "application/json"
         ], beforeSend: { outGoingReq in
             outGoingReq.body = req.body.data
         })
 
     }
-  
-  
 
 //    func update(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
 //
