@@ -10,7 +10,7 @@ import Vapor
 extension UsersController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
         routes.get(":usersId", use: find)
-        routes.put(":usersId", use: update)
+        routes.put(use: update)
     }
 }
 
@@ -23,7 +23,7 @@ final class UsersController {
 
     private func update(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
         if req.loggedIn == false { throw Abort(.unauthorized) }
-        return try req.users.find(req).hop(to: req.eventLoop)
+        return try req.users.update(req).hop(to: req.eventLoop)
     }
 
 }

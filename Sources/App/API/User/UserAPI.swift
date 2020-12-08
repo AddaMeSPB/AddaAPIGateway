@@ -66,16 +66,14 @@ extension UserAPI {
     }
     
     var uri = configuration.baseURL
-    guard let usersID = req.parameters.get("usersID") else {
-      throw Abort(.badRequest, reason: "\(#line) update param id is missing")
-    }
+    uri.path += "/users"
     
-    uri.path += "/users/\(usersID)"
-    
-    return application.client.get(uri, headers: [
+    return application.client.put(uri, headers: [
       "Content-Type":"application/json",
       "authorization": token
-    ])
+    ], beforeSend: { outGoingReq in
+      outGoingReq.body = req.body.data
+    })
   }
   
   

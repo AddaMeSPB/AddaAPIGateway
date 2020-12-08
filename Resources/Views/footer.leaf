@@ -1,0 +1,13 @@
+<footer class="my-5 text-center">
+   <!-- Copyright removal is not prohibited! -->
+   <p class="mb-2"><small>COPYRIGHT © 2021. ALL RIGHTS RESERVED. ADDA </small></p>
+   <small>
+   <a href="/terms" class="m-2">TERMS</a>
+   <a href="/privacy" class="m-2">PRIVACY</a>
+   </small>
+</footer>
+<!-- jQuery and Bootstrap -->
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script type="text/javascript" src="/js/script.js"></script>

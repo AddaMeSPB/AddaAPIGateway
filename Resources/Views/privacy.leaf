@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+   #extend("header"): #endextend
+   
+   <body data-spy="scroll" data-target="#navbar" data-offset="30">
+      <div class="bg-privacy" id="">
+         <div class="container mt-5">
+            <h1 class="h1-privacy" style="text-align: left;">
+               <b>PRIVACY POLICY</b>
+            </h1>
+            <p style="text-align: left;">
+               <b style="font-size: 16px;">Last Updated</b><span style="font-weight: 400;">: July 20, 2018</span>
+            </p>
+            <p>
+               <span style="font-weight: 400;">This privacy policy ("</span><b>Policy</b>
+               <span style="font-weight: 400;">") describes how Adda2" "we" or "us") will collect, use and share personal information of users of the Adda2 service, mobile application ("</span><b>App</b><span style="font-weight: 400;">") and website (collectively, the "</span><b>Service</b><span style="font-weight: 400;">" or "</span><b>Adda2</b><span style="font-weight: 400;">"). Any capitalized terms not otherwise defined in this Policy have the meaning assigned to them in our Terms of Service. This Policy also applies to any of our applications or websites that post or link to this Policy. </span>
+            </p>
+            <p><span style="font-weight: 400;">Please review this policy before downloading the App, using the Service or submitting any personal information to us or on the Service. &nbsp;By using the Service and downloading the App, you represent that you are at least 14 years old and you consent to the collection, use and disclosure of personal information as set forth in our Privacy Policy and Terms of Service. &nbsp;</span></p>
+            <h2><b>WHAT WE COLLECT</b></h2>
+            <p><span style="font-weight: 400;">We may get information about you in a range of ways. </span></p>
+            <p><b>Information You Give Us.</b><span style="font-weight: 400;"> &nbsp;When you register for use of the Service or download the App, we may &nbsp;collect certain registration information such as your name, email address, mobile number, username, password, demographic information (such as your gender and occupation), and other optional information ,including information provided by you for your profile. &nbsp;We will also collect any other information you directly give us on our Service, including if you use the Service, your location information, posted comments and other content. We may allow you to register or log into the Service using your Facebook login or other social media accounts, and in such event, you authorize us to access and collect certain account information, such as your public Facebook profile (if applicable), email address, interests, likes, gender, birthday, education history, work history, relationship interests, current city, photos, videos, personal description and similar information.</span></p>
+            <p><b>Location Information</b><span style="font-weight: 400;">. When you open or use the Service, such as to post a "Adda2", we will automatically and periodically collect location information from your mobile device and/or mobile carrier. If you do not wish us to collection location information, you may change the preferences on your mobile device or deinstall the App. &nbsp;If you choose not to permit the App to collection location data, ;you may not be able to use the Service or certain functions available through the Service. &nbsp;For example, you will not be able to post "Adda2" on the Service or view other "Adda2" in your vicinity. </span></p>
+            <p><b>Information Automatically Collected.</b><span style="font-weight: 400;"> We automatically log information about you and your device. For example, when using our Service, we log your device’s operating system type, language, browser type (where applicable), the website you visited before browsing to our Service (where applicable), items you viewed, how long you spent on a particular item, mobile device IDs or advertising IDs, access times, and information about your use of and actions on our Service. </span></p>
+            <p><b>Mobile Analytics.&nbsp;</b><span style="font-weight: 400;">We use mobile analytics software to allow us to better understand the functionality of our App on your phone. This software may record information such as how often you use the application, the events that occur within the application, aggregated usage, performance data, and from where the application was downloaded. We do not link the information we store within the analytics software to any personally identifiable information you submit within the mobile application.</span></p>
+            <p><b>Tracking Technologies.&nbsp;</b><span style="font-weight: 400;">When you visit our website or use the Service, We and our service provider partners may collect certain information about your computer or device through technologies such as cookies, beacons, tags, and scripts. Types of partners that utilize tracking technologies include analytics providers, customer support services, and marketing service providers. &nbsp;These technologies are used in analyzing trends, administering the Site and Service, providing customer support, understanding product quality and usability, and gathering demographic information about our user base as a whole. &nbsp;We may receive reports based on the use of these technologies by these companies on an individual as well as aggregated basis.</span></p>
+            <h2><b>USE OF PERSONAL INFORMATION</b></h2>
+            <p><span style="font-weight: 400;">We use your personal information to:</span></p>
+            <ul>
+               <li><span style="font-weight: 400;">Respond to your comments, questions and requests for information or services.</span></li>
+               <li><span style="font-weight: 400;">Operate, maintain, and improve our sites, products, and services, including operating the Service.</span></li>
+               <li><span style="font-weight: 400;">Recognize you when you use our Service and allow other Users to view your Adda2, as designated by you through the Service and in accordance with our Terms of Service. &nbsp;&nbsp;</span></li>
+               <li><span style="font-weight: 400;">Send our users notifications regarding events or other users with whom you connect within your vicinity.</span></li>
+               <li><span style="font-weight: 400;">Send information including confirmations, technical notices, updates, alerts, and support and administrative messages, through in App notifications, email or text message.</span></li>
+               <li><span style="font-weight: 400;">Communicate about promotions, upcoming events, and other news about products and services offered by us and our partners.</span></li>
+               <li><span style="font-weight: 400;">Protect, investigate, and deter against fraudulent, unauthorized, or illegal activity.</span></li>
+               <li><span style="font-weight: 400;">Enforce our Terms of Service; and </span></li>
+               <li><span style="font-weight: 400;">Provide and deliver products and services customers request.</span></li>
+            </ul>
+            <h2>&nbsp;<b>SHARING OF PERSONAL INFORMATION</b></h2>
+            <p><span style="font-weight: 400;">We may share personal information:</span></p>
+            <ul>
+               <li style="font-weight: 400;"><span style="font-weight: 400;">With your consent.</span></li>
+               <li style="font-weight: 400;">
+                  <span style="font-weight: 400;">As part of your use of the Service, including </span>
+                  <ul>
+                     <li style="font-weight: 400;"><span style="font-weight: 400;">With the general public if you create a public profile and post information regarding yourself in this profile;</span></li>
+                     <li style="font-weight: 400;"><span style="font-weight: 400;">With &nbsp;the general public if you choose to post &nbsp;Adda2 and participation in the Service, which may include personal information or messages you choose to share; or</span></li>
+                     <li style="font-weight: 400;"><span style="font-weight: 400;">On social media sites, if you use features of the Services that integrate with other social sharing sites or apps. </span></li>
+                  </ul>
+               </li>
+               <li style="font-weight: 400;"><span style="font-weight: 400;">When we do a business deal, or negotiate a business deal, involving the sale or transfer of all or a part of our business or assets. These deals can include any merger, financing , acquisition or similar transaction.</span></li>
+               <li style="font-weight: 400;"><span style="font-weight: 400;">In the event of a bankruptcy or liquidation proceeding.</span></li>
+               <li style="font-weight: 400;"><span style="font-weight: 400;">For legal, protection, and safety purposes, including, but not limited to (i) comply with laws, (ii) respond to lawful requests and legal processes, (iii) protect the rights and property of the Company, our agents, other users and third parties (including enforcing our agreements, policies, and terms of service), and (iv) in an emergency or other hazardous situation (this includes protecting the safety of you, our employees and agents, other users, the general public, or any person).</span></li>
+               <li style="font-weight: 400;"><span style="font-weight: 400;">We may share information with our service providers and other partners who need it to do work for us.</span></li>
+            </ul>
+            <p><span style="font-weight: 400;">Our Service allows you to post Adda2 that share your current location at the time of posting with other users on the App. &nbsp;You should only post Adda2 if you feel comfortable publicly sharing your current location at the time of posting. &nbsp;We do not control how other users may use your location or other information made available by you on the Service, including your Adda2, comments on your own or other users’ Adda2, photographs, video or other content posted by you on the Service. &nbsp;Your posting of all such information constitutes your consent to share such information as designated on the Service or if in a public Interactive Area on the Service with the general public. </span></p>
+            <p><span style="font-weight: 400;">We may also share aggregated and/or anonymized data with others for their own uses, including sharing aggregate anonymized information with our service providers and partners. Unless you otherwise consent, we will not provide your personally identifiable information with third parties for their direct marketing purposes. </span></p>
+            <h2><b>INFORMATION COLLECTED FROM CHILDREN</b></h2>
+            <p><span style="font-weight: 400;">We do not knowingly collect personal information from children without parental consent. Users must be 14 years old or older to use the Service, and users under 18 must have parental consent. If we learn that we have inadvertently obtained information from a child, or done so without parental or guardian consent, we will promptly delete the information. </span></p>
+            <h2><b>DISCLOSURES</b></h2>
+            <p><span style="font-weight: 400;"><strong>Social Media Sites.</strong> &nbsp;We may have pages or other presence on various social networking sites or services, such as Facebook, Twitter and the like. Any information you post or provide through such sites and services will be subject to the policies of those sites and services. If you register for the Service through a social networking site, your personal information will be imported from such site to Company as permitted by the policies of such site.</span></p>
+            <p><span style="font-weight: 400;"><strong>Tracking.</strong> We do not track or collect personal data about your online activities once you close the App or Service.</span></p>
+            <h2><b>THIRD PARTY SITES AND SERVICES</b></h2>
+            <p><span style="font-weight: 400;">The Service may contain links to third-party websites, products or services. The Service may also offer content from third parties. Information collected by third parties is governed by those third party’s privacy policies. You should carefully review the privacy policies and practices of such third party sites prior to sharing your personal information. &nbsp;Our linking to or sharing any such third party website, products or services is not an endorsement, recommendation or sponsorship of such third party or their products, services or privacy practices. </span></p>
+            <h2><b>INFORMATION SECURITY</b></h2>
+            <p><span style="font-weight: 400;">We will take reasonable security measures to protect against unauthorized access to or unauthorized alteration, disclosure or destruction of data. &nbsp;However, we cannot guarantee its absolute security or that unauthorized persons will not access or use the Service or your personal information for improper purposes. &nbsp;In the event of a breach of security affecting personal information or data on our servers, we will take such notification and other steps as may be required under applicable law. &nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+            <h2><b>LOCATION OF SERVERS </b></h2>
+            <p><span style="font-weight: 400;">Our servers are located in the United States of America. &nbsp;If you are accessing the site and service from outside the United States, please be advised that through your continued use of the site or service, which is governed by U.S. law and this Privacy Policy, you are transferring your personal information to the United States and you consent to that transfer and the maintenance and processing of such information in the United States. &nbsp;</span></p>
+            <h2><b>INFORMATION CHOICES AND CHANGES</b></h2>
+            <p><span style="font-weight: 400;">Our marketing emails tell you how to "opt-out." If you opt out, we may still send you non-marketing emails. Non-marketing emails include emails about the Service, your accounts and our business dealings with you.</span></p>
+            <p><span style="font-weight: 400;">You may send requests about personal information to our Contact Information below. You can request to change or update your personal information or opt-out of our sharing personally identifiable information with others. &nbsp;You may delete your account through the Service and we will use reasonable efforts to promptly remove your information from the active part of the Service. Once you delete your account, you will not have access to any information you provided on the Service. &nbsp;We reserve the right to retain data, including your personal information, as necessary to comply with our legal obligations, resolve disputes and enforce our rights under our Terms of Service and otherwise. </span></p>
+            <p><span style="font-weight: 400;">You can typically remove and reject cookies from our Service with your browser settings. Many browsers are set to accept cookies until you change your settings. If you remove or reject our cookies, it could affect how our Service works for you.</span></p>
+            <p><b>CONTACT INFORMATION.</b><span style="font-weight: 400;"> We welcome your comments or questions about this privacy policy. You may also contact us with questions regarding the Service at saroar9@gmail.com</span></p>
+            <p><b>CHANGES TO THIS PRIVACY POLICY.</b><span style="font-weight: 400;"> We may change this privacy policy from time to time. &nbsp;We will use reasonable efforts to notify you of material changes to this privacy policy, including by posting such notices on the Service. If we make any changes, we will change the date above. Continued use of the Service after the effective date of such changes constitutes your acceptance of and agreement to the updated policy. </span></p>
+         </div>
+      </div>
+      <!-- // end .section -->
+      
+      #extend("footer"): #endextend
+   </body>
+</html>

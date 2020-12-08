@@ -5,11 +5,15 @@ func routes(_ app: Application) throws {
     return "AddaAPIGateway works!"
   }
   
-  app.get("hello") { req -> String in
-    return "Hello, world!"
-  }
-  
   try app.group("v1") { api in
+    api.get("terms") { req -> EventLoopFuture<View> in
+      return req.view.render("terms")
+    }
+    
+    api.get("privacy") { req -> EventLoopFuture<View>in
+      return req.view.render("privacy")
+    }
+    
     try api.register(collection: AuthController())
     
     // USERS
