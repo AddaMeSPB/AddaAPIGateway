@@ -50,9 +50,9 @@ COPY --from=build --chown=vapor:vapor /build/.env.production /app/.env.productio
 #COPY --from=build --chown=vapor:vapor /build/.env.development /app/.env.development
 #COPY --from=build --chown=vapor:vapor /build/.env.test /app/.env.test
 # Uncomment the next line if you need to load resources from the `Public` directory
-#COPY --from=build --chown=vapor:vapor /build/Public /app/Public
+COPY --from=build --chown=vapor:vapor /build/Public /app/Public
 # Uncomment the next line if you need to load resources from the `Resources` directory
-#COPY --from=build --chown=vapor:vapor /build/Resources /app/Resources
+COPY --from=build --chown=vapor:vapor /build/Resources /app/Resources
 
 # Ensure all further commands run as the vapor user
 USER vapor:vapor
