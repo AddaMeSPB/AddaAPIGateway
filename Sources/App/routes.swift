@@ -1,11 +1,16 @@
 import Vapor
 
 func routes(_ app: Application) throws {
+//  app.get { req in
+//    return "AddaAPIGateway works!"
+//  }
+//
   app.get { req in
-    return "AddaAPIGateway works!"
+    req.view.render("index")
   }
   
   try app.group("v1") { api in
+    
     api.get("terms") { req -> EventLoopFuture<View> in
       return req.view.render("terms")
     }
