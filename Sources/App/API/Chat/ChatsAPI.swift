@@ -45,7 +45,7 @@ extension ChatsAPI {
     }
     
     var uri = configuration.baseURL
-    uri.path = "\(req.url)/chat"
+    uri.path = "\(req.url)"
     return application.client.get(uri, headers: [
       "Content-Type":"application/json",
       "authorization": token
@@ -64,7 +64,7 @@ extension ChatsAPI {
     }
     
     var uri = configuration.baseURL
-    uri.path += "/conversations"
+    uri.path += "\(req.url)"
     
     return application.client.post(uri, headers: [
       "Content-Type":"application/json",
@@ -86,17 +86,18 @@ extension ChatsAPI {
     }
     
     var uri = configuration.baseURL
-    guard let conversationsId = req.parameters.get("conversationsId") else {
+    
+    guard let _ = req.parameters.get("conversationsId") else {
       throw Abort(.badRequest, reason: "param id is missing")
     }
     
-    uri.path += "/messages/by/conversations/\(conversationsId)"
+    uri.path += "\(req.url)"
     return application.client.get(uri, headers: [
       "Content-Type":"application/json",
       "authorization": token
     ])
   }
-  
+
   func readAllConversations(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
     
     guard let configuration = self.configuration else {
@@ -108,7 +109,7 @@ extension ChatsAPI {
     }
     
     var uri = configuration.baseURL
-    uri.path += "/conversations"
+    uri.path += "\(req.url)"
     return application.client.get(uri, headers: [
       "Content-Type":"application/json",
       "authorization": token
@@ -126,11 +127,11 @@ extension ChatsAPI {
     }
     
     var uri = configuration.baseURL
-    guard let conversationsId = req.parameters.get("conversationsId") else {
+    guard let _ = req.parameters.get("conversationsId") else {
       throw Abort(.badRequest, reason: "param id is missing")
     }
     
-    uri.path += "/conversations/\(conversationsId)"
+    uri.path += "\(req.url)"
 
     return application.client.get(uri, headers: [
       "Content-Type":"application/json",
@@ -153,7 +154,7 @@ extension ChatsAPI {
       throw Abort(.badRequest, reason: "param id is missing")
     }
     
-    uri.path += "/conversations/\(conversationsId)/messages"
+    uri.path += "\(req.url)"
     return application.client.get(uri, headers: [
       "Content-Type":"application/json",
       "authorization": token
@@ -172,12 +173,12 @@ extension ChatsAPI {
     
     var uri = configuration.baseURL
     
-    guard let conversationsId = req.parameters.get("conversationsId"),
-          let usersId = req.parameters.get("usersId") else {
+    guard let _ = req.parameters.get("conversationsId"),
+          let _ = req.parameters.get("usersId") else {
       throw Abort(.badRequest, reason: "param conversationsId/usersId is missing")
     }
     
-    uri.path += "/conversations/\(conversationsId)/users/\(usersId)"
+    uri.path += "\(req.url)"
     
     return application.client.post(uri, headers: [
       "Content-Type":"application/json",

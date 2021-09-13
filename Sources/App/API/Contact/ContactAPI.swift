@@ -52,7 +52,7 @@ extension ContactAPI {
     
     var uri = configuration.baseURL
   
-    uri.path += "/contacts"
+    uri.path += "\(req.url)"
     return application.client.post(uri, headers: [
         "Content-Type":"application/json",
         "authorization": token

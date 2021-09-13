@@ -9,16 +9,16 @@ func routes(_ app: Application) throws {
     req.view.render("index")
   }
   
+  app.get("terms") { req -> EventLoopFuture<View> in
+    return req.view.render("terms")
+  }
+  
+  app.get("privacy") { req -> EventLoopFuture<View>in
+    return req.view.render("privacy")
+  }
+
   try app.group("v1") { api in
-    
-    api.get("terms") { req -> EventLoopFuture<View> in
-      return req.view.render("terms")
-    }
-    
-    api.get("privacy") { req -> EventLoopFuture<View>in
-      return req.view.render("privacy")
-    }
-    
+        
     try api.register(collection: AuthController())
     
     // USERS

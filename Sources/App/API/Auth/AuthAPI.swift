@@ -39,7 +39,7 @@ extension AuthAPI {
         }
 
         var uri = configuration.baseURL
-        uri.path += "/auth/login"
+        uri.path += "\(req.url)"
         return application.client.post(uri, headers: [
             "Content-Type":"application/json"
         ], beforeSend: { outGoingReq in
@@ -55,7 +55,7 @@ extension AuthAPI {
 
         var uri = configuration.baseURL
 
-        uri.path += "/auth/verify_sms"
+        uri.path += "\(req.url)"
         return application.client.post(uri, headers: [
             "Content-Type":"application/json"
         ], beforeSend: { outGoingReq in
@@ -70,7 +70,7 @@ extension AuthAPI {
         }
 
         var uri = configuration.baseURL
-        uri.path += "/auth/refreshToken"
+        uri.path += "\(req.url)"
 
         return application.client.post(uri, headers: [
             "Content-Type": "application/json"

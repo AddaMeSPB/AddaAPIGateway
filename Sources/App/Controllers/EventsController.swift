@@ -29,7 +29,7 @@ final class EventsController {
     }
 
     func read(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
-        //if req.loggedIn == false { throw Abort(.unauthorized) }
+        if req.loggedIn == false { throw Abort(.unauthorized) }
 
         return try req.events.read(req).hop(to: req.eventLoop)
     }
@@ -41,9 +41,8 @@ final class EventsController {
     }
 
     func list(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
-        if req.loggedIn == false {
-            throw Abort(.unauthorized)
-        }
+        if req.loggedIn == false { throw Abort(.unauthorized) }
+      
         return try req.events.list(req).hop(to: req.eventLoop)
     }
 

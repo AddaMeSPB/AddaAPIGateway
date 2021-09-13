@@ -67,7 +67,7 @@ extension EventsAPI {
         guard let id = req.parameters.get("events_id") else {
             throw Abort(.badRequest, reason: "param id is missing")
         }
-        uri.path += "/events/\(id)"
+        uri.path += "\(req.url)"
         return application.client.get(uri, headers: [
             "Content-Type":"application/json",
             "authorization": token
@@ -85,7 +85,7 @@ extension EventsAPI {
         }
 
         var uri = configuration.baseURL
-        uri.path += "/events/my"
+        uri.path += "\(req.url)"
         return application.client.get(uri, headers: [
             "Content-Type":"application/json",
             "authorization": token
@@ -103,7 +103,7 @@ extension EventsAPI {
         }
 
         var uri = configuration.baseURL
-        uri.path += "/events"
+        uri.path += "\(req.url)"
 
         return application.client.post(uri, headers: [
             "Content-Type":"application/json",
@@ -128,7 +128,7 @@ extension EventsAPI {
 //        guard let id = req.parameters.get("events_id") else {
 //            throw Abort(.badRequest, reason: "param id is missing")
 //        }
-        uri.path += "/events"
+        uri.path += "\(req.url)"
 
         return application.client.put(uri, headers: [
             "Content-Type":"application/json",
@@ -151,7 +151,7 @@ extension EventsAPI {
         guard let id = req.parameters.get("events_id") else {
             throw Abort(.badRequest, reason: "param id is missing")
         }
-        uri.path += "/events/\(id)"
+        uri.path += "\(req.url)"
 
         return application.client.delete(uri, headers: [
             "Content-Type":"application/json",

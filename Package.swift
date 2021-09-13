@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.4
 import PackageDescription
 
 let package = Package(
@@ -8,10 +8,10 @@ let package = Package(
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.32.1"),
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.48.5"),
         .package(url: "https://github.com/vapor/jwt.git", from: "4.0.0"),
-        .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "6.6.4"),
-        .package(url: "https://github.com/vapor/leaf.git", from: "4.0.0")
+        .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "6.6.8"),
+        .package(url: "https://github.com/vapor/leaf.git", from: "4.1.3")
     ],
     targets: [
         .target(
@@ -23,9 +23,6 @@ let package = Package(
                 .product(name: "Leaf", package: "leaf"),
             ],
             swiftSettings: [
-                // Enable better optimizations when building in Release configuration. Despite the use of
-                // the `.unsafeFlags` construct required by SwiftPM, this flag is recommended for Release
-                // builds. See <https://github.com/swift-server/guides#building-for-production> for details.
                 .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
             ]
         ),

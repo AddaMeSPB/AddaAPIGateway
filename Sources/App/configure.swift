@@ -19,6 +19,8 @@ public func configure(_ app: Application) throws {
   app.contacts.configuration = .environment
   app.attachments.configuration = .environment
   
+//  app.logger.logLevel = .trace
+  
   // Encoder & Decoder
   let encoder = JSONEncoder()
   encoder.dateEncodingStrategy = .iso8601
@@ -38,27 +40,6 @@ public func configure(_ app: Application) throws {
     app.http.server.configuration.port = 8080
     app.http.server.configuration.hostname = "0.0.0.0"
   }
-  
-  // app.http.server.configuration.supportVersions = [.two]
-  
-  //    if app.environment == .production {
-  //        let homePath = app.directory.workingDirectory
-  //        let certPath = homePath + "cert/cert.pem"
-  //        let chainPath = homePath + "cert/chain.pem"
-  //        let keyPath = homePath + "cert/key.pem"
-  //        // 2
-  //        app.http.server.configuration.supportVersions = [.two]
-  //        // 3
-  //        try app.http.server.configuration.tlsConfiguration = .forServer(
-  //            certificateChain: [
-  //                .certificate(.init(file: certPath,
-  //                                   format: .pem)),
-  //                .certificate(.init(file: chainPath,
-  //                                   format: .pem))
-  //            ],
-  //            privateKey: .file(keyPath)
-  //        )
-  //    }
-  // register routes
+
   try routes(app)
 }

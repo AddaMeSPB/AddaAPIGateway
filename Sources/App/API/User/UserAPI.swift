@@ -44,11 +44,11 @@ extension UserAPI {
     
     var uri = configuration.baseURL
     
-    guard let usersID = req.parameters.get("usersId") else {
+    guard let _ = req.parameters.get("usersId") else {
       throw Abort(.badRequest, reason: "\(#line) find usersID param is missing")
     }
     
-    uri.path += "/users/\(usersID)"
+    uri.path += "\(req.url)"
     return application.client.get(uri, headers: [
       "Content-Type":"application/json",
       "authorization": token
@@ -66,7 +66,7 @@ extension UserAPI {
     }
     
     var uri = configuration.baseURL
-    uri.path += "/users"
+    uri.path += "\(req.url)"
     
     return application.client.put(uri, headers: [
       "Content-Type":"application/json",
@@ -86,7 +86,7 @@ extension UserAPI {
       }
       
       var uri = configuration.baseURL
-      uri.path += "/devices"
+      uri.path += "\(req.url)"
       
       return application.client.post(uri, headers: [
         "Content-Type":"application/json",

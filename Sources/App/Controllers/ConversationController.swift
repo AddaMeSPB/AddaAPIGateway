@@ -19,6 +19,7 @@ extension ConversationController: RouteCollection {
   }
 }
 
+
 final class ConversationController {
   
   func create(_ req: Request) throws -> EventLoopFuture<ClientResponse> {
