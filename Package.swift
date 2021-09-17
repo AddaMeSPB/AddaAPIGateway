@@ -8,7 +8,7 @@ let package = Package(
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.48.5"),
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.48.7"),
         .package(url: "https://github.com/vapor/jwt.git", from: "4.0.0"),
         .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "6.6.8"),
         .package(url: "https://github.com/vapor/leaf.git", from: "4.1.3")
