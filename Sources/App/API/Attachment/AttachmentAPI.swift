@@ -52,7 +52,7 @@ extension AttachmentAPI {
     
     var uri = configuration.baseURL
   
-    uri.path += "/attachments"
+    uri.path += "\(req.url)"
     return application.client.post(uri, headers: [
         "Content-Type":"application/json",
         "authorization": token
@@ -74,7 +74,7 @@ extension AttachmentAPI {
       guard let id = req.parameters.get("attachmentsId") else {
           throw Abort(.badRequest, reason: "param id is missing")
       }
-      uri.path += "/attachments/\(id)"
+      uri.path += "\(req.url)"
 
       return application.client.delete(uri, headers: [
           "Content-Type":"application/json",
