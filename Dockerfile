@@ -1,7 +1,7 @@
 # ================================
 # Build image
 # ================================
-FROM swift:5.4-focal as build
+FROM swift:5.5-focal as build
 
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
     && apt-get -q update \

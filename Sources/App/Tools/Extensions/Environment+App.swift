@@ -11,4 +11,5 @@ extension Environment {
     // HOSTS
     static let eventHost = Self.get("EVENTS_URL")
     static let userHost = Self.get("USERS_URL")
+    public static var staging: Environment { .init(name: "staging") }
 }

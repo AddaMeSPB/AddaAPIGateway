@@ -33,6 +33,9 @@ public func configure(_ app: Application) throws {
   case .production:
     app.http.server.configuration.hostname = "0.0.0.0"
     app.http.server.configuration.port = 8080
+  case .staging:
+    app.http.server.configuration.port = 8081
+    app.http.server.configuration.hostname = "0.0.0.0"
   case .development:
     app.http.server.configuration.port = 8080
     app.http.server.configuration.hostname = "0.0.0.0"

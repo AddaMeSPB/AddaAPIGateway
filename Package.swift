@@ -1,4 +1,4 @@
-// swift-tools-version:5.4
+// swift-tools-version:5.5
 import PackageDescription
 
 let package = Package(
@@ -8,10 +8,10 @@ let package = Package(
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.51.1"),
-        .package(url: "https://github.com/vapor/jwt.git", from: "4.0.0"),
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.62.1"),
+        .package(url: "https://github.com/vapor/jwt.git", from: "4.2.0"),
         .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "6.7.0"),
-        .package(url: "https://github.com/vapor/leaf.git", from: "4.1.3")
+        .package(url: "https://github.com/vapor/leaf.git", from: "4.2.0")
     ],
     targets: [
         .target(
@@ -33,3 +33,5 @@ let package = Package(
         ])
     ]
 )
+
+
